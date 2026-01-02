@@ -1,0 +1,12 @@
+syntax = "proto3";
+option go_package = "/proto";
+
+service serviceStream {
+  rpc Fun(Request)returns(stream Response){}
+}
+message Request {
+  string name = 1;
+}
+message Response {
+  string Text = 1;
+}
