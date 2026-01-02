@@ -1,0 +1,19 @@
+syntax = "proto3";
+option go_package = "./orderservice";
+
+message Order {
+  int32 id = 1;
+  string description = 2;
+   double price = 3; 
+   string name =4;
+   string address = 5;
+   string  addtime =6;
+   message OrderItem{   //订单项,message嵌套
+    int32  id = 1;
+    string ititle = 2;
+    double price = 3; 
+    int32 num= 4;
+   }
+   OrderItem orderitem=7;
+}
+//生成的go文件 protoc --go_out=./ *.proto

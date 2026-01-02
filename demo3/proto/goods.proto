@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "./goodsService";
+service GoodsService {
+    rpc GetGoodsList (GetGoodsReq) returns (GetGoodsRes) {}
+}
+message GetGoodsReq {
+    string title =1;
+    double  price =2;
+    string content=3;
+}
+message GetGoodsRes {
+    string message =1;
+    bool  success=2;
+}
+// 编译命令protoc --go_out=. --go-grpc_out=. *.proto
