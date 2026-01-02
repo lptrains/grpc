@@ -1,0 +1,15 @@
+syntax ="proto3";
+
+option go_package ="./goods";
+service goods{
+    rpc AddGoods(AddGoodsReq) returns (AddGoodsRes);
+}
+message AddGoodsReq{
+    string Title =1;
+    double price=2;
+    string content=3;
+}
+message AddGoodsRes{
+    string message=1;
+    bool success=2;
+}

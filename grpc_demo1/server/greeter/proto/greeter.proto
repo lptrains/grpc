@@ -1,0 +1,13 @@
+syntax ="proto3";
+option go_package="./greeter";
+
+service greeter {
+    rpc SayHello(req) returns(res);
+}
+message req {
+  string name=1;
+}
+message res{
+string message=1;
+}
+//protoc --go_out=. --go-grpc_out=. *.proto
